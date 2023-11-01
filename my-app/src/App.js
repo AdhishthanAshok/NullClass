@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { HelloWorld, ByeWorld } from "./components/HelloWorld";
+import { useState } from "react";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+
+  const increment = () => {
+    setCounter(counter + 1);
+  };
+  console.log(counter);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>
+      <p>Hello my name is Adhishthan</p>
+      <HelloWorld text="Hello How are you!" />
+      <ByeWorld />
+      <button onClick={increment}>Click Me</button>
+      <h1>{counter}</h1>
     </div>
   );
 }
